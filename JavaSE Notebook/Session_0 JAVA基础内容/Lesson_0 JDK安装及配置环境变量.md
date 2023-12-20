@@ -20,7 +20,7 @@ linux环境下，配置环境变量在 /etc/profile.d 中新建一个.sh脚本�
 注意事项：<br>
 1.export可以理解为从内存中获取变量，并用“=”赋值<br>
 2.linux环境变量PATH使用“:”进行分隔<br>
-3.添加环境变量完成后，使用命令 source /etc/profile 重新加载配置文件，使得刚才配置好的环境变量生效<br>
+3.添加环境变量完成后，使用命令 source/etc/profile 重新加载配置文件，使得刚才配置好的环境变量生效<br>
 ```
 # JAVA环境变量配置
 # 把“JAVA_HOME”变量从内存中导出，并以JDK的路径进行赋值
@@ -32,4 +32,6 @@ export PATH=$PATH:$JAVA_HOME/bin
 
 <h1>Windows环境</h1>
 <h2>JDK安装</h2>
+暂略
 <h2>配置环境变量</h2>
+暂略
