@@ -13,4 +13,14 @@ linux环境下，配置环境变量在 /etc/profile.d 中新建一个.sh脚本�
 
 ![image](https://github.com/WarlockW/JavaSE_Daily_Learning/blob/main/JavaSE%20Notebook/Session_0%20JAVA%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/Static/0-1.png)
 
+在 MY_ENV.sh 文件中写入配置
+<br/><br/>
 ![image](https://github.com/WarlockW/JavaSE_Daily_Learning/blob/main/JavaSE%20Notebook/Session_0%20JAVA%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/Static/0-2.png)
+
+```
+# 把“JAVA_HOME”变量从内存中导出，并以JDK的路径进行赋值
+export JAVA_HOME=/opt/module/jdk-15.0.2
+
+# 把“PATH”变量从内存中导出，并以$JAVA_HOME/bin进行赋值（linux以“:”符号作为PATH环境变量的分隔符号）
+export PATH=$PATH:$JAVA_HOME/bin
+```
