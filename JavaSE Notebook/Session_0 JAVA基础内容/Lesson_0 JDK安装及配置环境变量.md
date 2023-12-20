@@ -29,3 +29,7 @@ export JAVA_HOME=/opt/module/jdk-15.0.2
 # 把“PATH”变量从内存中导出，并以$JAVA_HOME/bin进行赋值（linux以“:”符号作为PATH环境变量的分隔符号）
 export PATH=$PATH:$JAVA_HOME/bin
 ```
+
+<h1>Windows环境</h1>
+<h2>JDK安装</h2>
+<h2>配置环境变量</h2>
