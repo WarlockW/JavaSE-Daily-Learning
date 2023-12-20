@@ -16,7 +16,6 @@ linux环境下，配置环境变量在 /etc/profile.d 中新建一个.sh脚本�
 在 MY_ENV.sh 文件中写入配置
 <br/><br/>
 ![image](https://github.com/WarlockW/JavaSE_Daily_Learning/blob/main/JavaSE%20Notebook/Session_0%20JAVA%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/Static/0-2.png)
-
 <br/><br/>
 注意事项：<br>
 1.export可以理解为从内存中获取变量，并用“=”赋值<br>
