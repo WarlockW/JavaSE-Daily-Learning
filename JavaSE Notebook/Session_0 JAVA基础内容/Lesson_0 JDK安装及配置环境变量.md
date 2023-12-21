@@ -26,7 +26,7 @@ linux环境下，配置环境变量在 /etc/profile.d 中新建一个.sh脚本�
 # 把“JAVA_HOME”变量从内存中导出，并以JDK的路径进行赋值
 export JAVA_HOME=/opt/module/jdk-15.0.2
 
-# 把“PATH”变量从内存中导出，并以$JAVA_HOME/bin进行赋值（linux以“:”符号作为PATH环境变量的分隔符号），相当于在原有的PATH后面加上新的内容
+# 把“PATH”变量从内存中导出，并以$JAVA_HOME/bin进行赋值（linux以“:”符号作为PATH环境变量的分隔符号）相当于在原有的PATH后面加上新的内容
 export PATH=$PATH:$JAVA_HOME/bin
 ```
 
