@@ -14,6 +14,7 @@ this总是指向调用到该方法的对象。最大的作用是让同一个类�
 super代表子类对父类满参构造函数的初始化，也是需要产生对象才可以使用但是考虑到虚拟机加载顺序为先加载类，当被实例化才产生对象。所以如果并存则表示类和对象同时加载，显然是不合逻辑的。<br/>
 <br/>
 错误示范
+
 ```
 public class StaticTest {
 
@@ -26,4 +27,23 @@ public class StaticTest {
     }
 }
 ```
-结果显示编译不通过----无法从静态上下文中引用非静态 变量 this
+
+结果显示编译不通过----无法从静态上下文中引用非静态 变量 this <br/>
+应该修改为
+
+```
+public class StaticTest {
+
+    void info(){
+        System.out.println("Success");
+    }
+
+    public static void main(String[] args){
+        // 需要先新建一个类，用这个类去调用static修饰的类方法info
+        StaticTest A = new StaticTest();
+        A.info();
+    }
+}
+```
+
+显示通过并成功返回结果
