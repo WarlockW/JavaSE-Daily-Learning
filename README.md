@@ -1,2 +1,2 @@
 # JavaSE-Notebook
-学习JavaSE期间的课程笔记
+一些容易忘记的重点项
