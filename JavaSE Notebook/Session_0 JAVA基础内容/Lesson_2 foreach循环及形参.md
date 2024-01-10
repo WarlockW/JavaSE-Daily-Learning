@@ -3,14 +3,14 @@ for each循环一般用于遍历数组、集合中的所有元素，类似于pyt
 ```
 public class ForEachTest{
   public static void main(Sting[] args){
-    String[] names = {
+      String[] names = {
       "张三",
       "李四",
       "王五",
     };
     for(String name:names){
       System.out.println(name);
-   }
+    }
   }
 }
 ```
