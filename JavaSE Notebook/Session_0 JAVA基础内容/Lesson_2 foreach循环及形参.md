@@ -8,6 +8,8 @@ public class ForEachTest{
       "李四",
       "王五",
     };
+
+    // 使用for each结构遍历数组中所有元素
     for(String name:names){
       System.out.println(name);
     }
