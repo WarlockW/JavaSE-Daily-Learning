@@ -29,7 +29,7 @@ public class StaticTest {
 ```
 
 结果显示编译不通过----无法从静态上下文中引用非静态 变量 this <br/>
-应该修改为
+原因是main方法有static修饰，先于info方法加载至内存并执行，但是此时info方法由于没有static修饰，因此还未加载到内存，因此main方法无法获取。应该修改为下面内容
 
 ```
 public class StaticTest {
@@ -46,4 +46,22 @@ public class StaticTest {
 }
 ```
 
-显示通过并成功返回结果 Success
+显示通过并成功返回结果 Success <br/>
+ <br/>
+或者改为下面的内容----即增加info的static修饰符，也可以通过编译正常运行 <br/>
+
+```
+public class StaticTest {
+
+    // 增加修饰词static
+    static void info(){
+        System.out.println("Success");
+    }
+
+    public static void main(String[] args){
+        info();
+    }
+}
+```
+
+原理为，info增加static修饰词后，相比不加static会在整体代码运行前先行加载到内存中，因此可以成功执行。
