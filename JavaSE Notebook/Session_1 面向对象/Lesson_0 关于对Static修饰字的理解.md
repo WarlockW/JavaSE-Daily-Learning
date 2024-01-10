@@ -25,6 +25,5 @@ public class StaticTest {
         this.info();
     }
 }
-// 显示编译不通过----无法从静态上下文中引用非静态 变量 this
 ```
-<br/>
+结果显示编译不通过----无法从静态上下文中引用非静态 变量 this
