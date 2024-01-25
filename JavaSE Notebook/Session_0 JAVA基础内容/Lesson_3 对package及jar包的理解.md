@@ -1,6 +1,9 @@
 <h1>jar包相关内容</h1>
 <h2>包名的命名规范</h2>
 
+例如，如果一个公司的网站域名为www.example.com，那么该公司的Java包命名可以采用com.example作为前缀，例如com.example.project、com.example.util等。<br/>
+这种命名规范的好处是，无论在哪个项目或模块中，只要看到包名，就可以快速地识别出该代码属于哪个公司或组织，以及其所属的项目或模块。这有助于提高代码的可读性和可维护性。<br/>
+
 <h2>jar包的理解</h2>
 Java生成的JAR文件（Java Archive）通常包含编译后的.class文件。这些.class文件是Java源代码经过编译后的字节码文件。<br/>
 当在Java项目中编译源代码时，编译器（例如javac）将源代码转换为字节码，并保存在.class文件中。然后，可以将这些.class文件打包到一个或多个JAR文件中。<br/>
@@ -19,11 +22,10 @@ jar cvf myapp.jar com/
 入口点（Main-Class）指定了程序的入口，即包含main()方法的类。通过指定入口点，可以直接使用java -jar命令来运行JAR包。<br/>
 类路径（Class-Path）用于指定JAR包的依赖关系。它告诉Java虚拟机在哪里可以找到JAR包所依赖的其他库或资源。<br/>
 
-
-
 <h2>关于ide调用其他jar包的理解</h2>
 
 <h1>package关键字相关内容</h1>
+一个.java文件最多只能归属一个包（package），也就是说一个源文件中只能包含一句package语句。 <br/>
 包与包下面的子包----
 
 <h1>import关键字相关内容</h1>
