@@ -1,4 +1,4 @@
-<h1>jar包相关内容</h1>
+<h1>对java包相关内容的理解（代码外的文件层理解）</h1>
 <h2>包名的命名规范</h2>
 
 例如，如果一个公司的网站域名为www.example.com，那么该公司的Java包命名可以采用com.example作为前缀，例如com.example.project、com.example.util等。<br/>
