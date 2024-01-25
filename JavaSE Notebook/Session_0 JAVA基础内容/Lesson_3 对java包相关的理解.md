@@ -35,8 +35,8 @@ jar cvf myapp.jar com/
 
 <h1>import关键字相关内容</h1>
 <h2>import</h2>
-import语句非必需，也可以写全路径
-不能用import的情况----两个子包中有名字相同的类
+通过import关键字，可以将其他Java类导入到当前文件中，这样就可以在当前文件中直接使用这些类，而不需要每次都写出完整的类名。例如，如果要使用java.util包中的ArrayList类，可以使用import关键字将其导入到当前文件中，然后可以直接使用ArrayList类。<br/>
+！！！【不能用import的情况】两个子包中有名字相同的类！！！<br/>
 
 <h2>import static</h2>
 静态导入：当想使用某个类的静态成员（如静态变量、静态方法）时，而该类的名字很长或者你频繁地使用这个类的静态成员，可以使用静态导入来简化代码。例如，可以这样导入 java.lang.Math 类中的静态方法：import static java.lang.Math.*;，然后直接使用 sqrt()、max() 等方法，而不需要每次都写出完整的类名。<br/>
