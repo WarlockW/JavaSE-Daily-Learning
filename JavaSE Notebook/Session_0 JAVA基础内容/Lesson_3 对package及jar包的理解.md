@@ -23,6 +23,7 @@ jar cvf myapp.jar com/
 类路径（Class-Path）用于指定JAR包的依赖关系。它告诉Java虚拟机在哪里可以找到JAR包所依赖的其他库或资源。<br/>
 
 <h2>关于ide调用其他jar包的理解</h2>
+原则上写有原始代码的.java文件经过编译后，生辰的.class文件为二进制文件，人类是无法直接读懂的。但是部分IDE存在反编译功能
 
 <h1>package关键字相关内容</h1>
 一个.java源文件最多只能归属一个包（package）且package语句必须在源文件的第一条非注释性语句，也就是说一个源文件中只能包含一句package语句。 <br/>
