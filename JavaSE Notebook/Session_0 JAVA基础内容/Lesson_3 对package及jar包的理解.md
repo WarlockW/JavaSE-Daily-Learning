@@ -25,7 +25,7 @@ jar cvf myapp.jar com/
 <h2>关于ide调用其他jar包的理解</h2>
 
 <h1>package关键字相关内容</h1>
-一个.java文件最多只能归属一个包（package），也就是说一个源文件中只能包含一句package语句。 <br/>
+一个.java源文件最多只能归属一个包（package）且package语句必须在源文件的第一条非注释性语句，也就是说一个源文件中只能包含一句package语句。 <br/>
 包与包下面的子包----
 
 <h1>import关键字相关内容</h1>
