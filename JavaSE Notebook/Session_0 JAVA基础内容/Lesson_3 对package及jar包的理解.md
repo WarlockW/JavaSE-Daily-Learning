@@ -1,5 +1,6 @@
 <h1>jar包相关内容</h1>
 <h2>包名的命名规范</h2>
+
 <h2>jar包的理解</h2>
 Java生成的JAR文件（Java Archive）通常包含编译后的.class文件。这些.class文件是Java源代码经过编译后的字节码文件。<br/>
 当在Java项目中编译源代码时，编译器（例如javac）将源代码转换为字节码，并保存在.class文件中。然后，可以将这些.class文件打包到一个或多个JAR文件中。<br/>
@@ -12,6 +13,9 @@ jar cvf myapp.jar com/
 这将创建一个名为myapp.jar的JAR文件，并将com/目录下的所有.class文件添加到其中。<br/>
 
 <h2>.MF文件的说明</h2>
+
+
+<h2>关于ide调用其他jar包的理解</h2>
 
 <h1>package关键字相关内容</h1>
 包与包下面的子包----
