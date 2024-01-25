@@ -13,6 +13,10 @@ jar cvf myapp.jar com/
 这将创建一个名为myapp.jar的JAR文件，并将com/目录下的所有.class文件添加到其中。<br/>
 
 <h2>.MF文件的说明</h2>
+.MF文件是JAR包的清单文件，用于描述JAR包的各种属性和配置。.MF文件包含了用于运行JAR包所需的各种元数据，例如入口点（Main-Class）和类路径（Class-Path）等。<br/>
+入口点（Main-Class）指定了程序的入口，即包含main()方法的类。通过指定入口点，可以直接使用java -jar命令来运行JAR包。<br/>
+类路径（Class-Path）用于指定JAR包的依赖关系。它告诉Java虚拟机在哪里可以找到JAR包所依赖的其他库或资源。<br/>
+
 
 
 <h2>关于ide调用其他jar包的理解</h2>
