@@ -31,7 +31,11 @@ jar cvf myapp.jar com/
 
 <h1>package关键字相关内容</h1>
 一个.java源文件最多只能归属一个包（package）且package语句必须在源文件的第一条非注释性语句，也就是说一个源文件中只能包含一句package语句。如果在源文件中不写package语句，则默认将该文件划分至默认包 <br/>
-package对应的是该源文件所在路径的情况，比如xxxxxxxx
+package对应的是该源文件所在路径的情况，比如上图中，位于sun/nio.cs.ext路径下的 .java文件，需要以.对目录层级进行分隔，写成
+
+```
+package sun.nio.ca.ext;
+```
 
 <h1>import关键字相关内容</h1>
 <h2>import</h2>
