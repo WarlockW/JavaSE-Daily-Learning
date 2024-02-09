@@ -81,3 +81,27 @@ grape_0对象的字节码文件对象是：Class Grape
 apple_0对象的字节码文件对象是：Class Apple
 apple_1对象的字节码文件对象是：Class Apple
 ```
+
+<h2>3.public String toString()</h2>
+关于toString方法要注意一点 : 当我们直接输出一个对象时，默认调用toString方法。比如方法println一个实例对象instance，默认输出instance.toString() </br>
+
+```
+// toString() : 返回该对象的字符串表示（默认打印的是"全类名 + @ + 哈希码值的十六进制"）
+
+public class toString_ {
+    public static void main(String[] args) {
+        //创建Animal类对象
+        Animal animal_0 = new Animal();
+        Animal animal_1 = new Animal();
+        Animal animal_2 = new Animal();
+        //toString() 方法的返回值类型为String类型（也可不做接收）
+        String animal_0_string = animal_0.toString();
+        System.out.println("animal_0对象的字符串表示是：" + animal_0_string);
+        System.out.println(animal_0);
+        System.out.println("------------------------------------------------");
+        System.out.println("animal_1对象的字符串表示是：" + animal_1.toString());
+        System.out.println("animal_2对象的字符串表示是：" + animal_2.toString());
+    }
+}
+
+class Animal {}
