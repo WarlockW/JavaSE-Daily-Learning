@@ -1,3 +1,5 @@
+<h1>instanceof的使用方法</h1>
+
 在Java中，instanceof是一个关键字，有两种常用用法： </br>
 1.用于测试一个对象是否是指定类型的实例 </br>
 2.或者是该类型的子类型的实例 </br>
@@ -60,9 +62,29 @@ public class Main {
 返回结果为：</br>
 
 ```
-a is an instance of Animal.  
+a is an instanceof Animal.
 d is an instance of Animal.  
 d is an instance of Dog.  
 a is not an instance of Dog.
+```
 
+
+<h1>JDK17新增的instanceof特性</h1>
+在传统的instanceof用法中，你需要先使用instanceof来检查一个对象是否属于某个类型，然后再进行类型转换。这样的代码往往比较冗长且容易出错。而在JDK 17中，你可以使用instanceof模式匹配来简化这个过程。</br>
+
+```
+//传统instanceof做完判断后更改变量类型
+Object obj = "Hello, World!";  
+  
+if (obj instanceof String) {  
+    String str = (String) obj;  
+    System.out.println(str.length());  
+}
+
+//JDK17新增模式匹配后进行判断完直接进行转换
+Object obj = "Hello, World!";  
+  
+if (obj instanceof String str) {  
+    System.out.println(str.length());  
+}
 ```
