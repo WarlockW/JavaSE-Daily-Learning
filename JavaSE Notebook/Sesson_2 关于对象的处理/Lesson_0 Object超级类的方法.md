@@ -83,7 +83,7 @@ apple_1对象的字节码文件对象是：Class Apple
 ```
 
 <h2>3.public String toString()</h2>
-关于toString方法要注意一点 : 当我们直接输出一个对象时，默认调用toString方法。比如方法println一个实例对象instance，默认输出instance.toString()。有必要时可以重写该方法 </br>
+关于toString方法要注意一点 : 当我们直接输出一个对象时，默认调用toString方法。比如方法println一个实例对象instance，默认输出instance.toString()。有必要时可以重写该方法。 </br>
 
 ```
 // toString() : 返回该对象的字符串表示（默认打印的是"全类名 + @ + 哈希码值的十六进制"）
@@ -120,3 +120,28 @@ animal_2对象的字符串表示是：Animal@3d045e70
 <h2>4.public boolean equals(Object obj)</h2>
 
 Object类中的equals()方法默认比较的是两个对象的引用。有必要时可以重写该方法。
+
+```
+// equals() : 返回其他某个对象是否与此对象“相等”（默认情况下比较的是两个对象的引用）
+ 
+public class Equals_ {
+    public static void main(String[] args) {
+        //创建教师类对象
+        Teacher teacher_0 = new Teacher();
+        Teacher teacher_1 = new Teacher();
+        //通过对象调用equals() 方法
+        System.out.println("teacher_0和teacher_1是一个对象吗？" + teacher_0.equals(teacher_1));
+        System.out.println("teacher_0和teacher_0是一个对象吗？" + teacher_0.equals(teacher_0));
+    }
+}
+
+class Teacher {}
+```
+输出结果：
+
+```
+teacher_0和teacher_1是一个对象吗？ false
+teacher_0和teacher_0是一个对象吗？ true
+```
+
+<h2>其余方法待补充，基础阶段暂时不会用到</h2>
