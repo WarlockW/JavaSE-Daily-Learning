@@ -83,7 +83,7 @@ apple_1对象的字节码文件对象是：Class Apple
 ```
 
 <h2>3.public String toString()</h2>
-关于toString方法要注意一点 : 当我们直接输出一个对象时，默认调用toString方法。比如方法println一个实例对象instance，默认输出instance.toString() </br>
+关于toString方法要注意一点 : 当我们直接输出一个对象时，默认调用toString方法。比如方法println一个实例对象instance，默认输出instance.toString()。有必要时可以重写该方法 </br>
 
 ```
 // toString() : 返回该对象的字符串表示（默认打印的是"全类名 + @ + 哈希码值的十六进制"）
@@ -116,3 +116,7 @@ Animal@4eec7777
 animal_1对象的字符串表示是：Animal@682a02eb
 animal_2对象的字符串表示是：Animal@3d045e70
 ```
+
+<h2>4.public boolean equals(Object obj)</h2>
+
+Object类中的equals()方法默认比较的是两个对象的引用。有必要时可以重写该方法。
