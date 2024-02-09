@@ -32,4 +32,7 @@ student_1对象的哈希码值为 :654321
 student_0对象的哈希码值为 :123456
 ```
 
-<h2>2.getClass()</h2>
+
+<h2>2.public final Class<?> getClass()</h2>
+
+getClass方法需要用一个Class类来作接收，即获取字节码文件对象（也叫Class对象）。并且getClass方法要通过对象来调用，因此使用前一定要创建一个对象。</br>
