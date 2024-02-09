@@ -105,3 +105,14 @@ public class toString_ {
 }
 
 class Animal {}
+```
+
+返回的结果为：
+
+```
+animal_0对象的字符串表示是：Animal@4eec7777
+Animal@4eec7777
+------------------------------------------------
+animal_1对象的字符串表示是：Animal@682a02eb
+animal_2对象的字符串表示是：Animal@3d045e70
+```
