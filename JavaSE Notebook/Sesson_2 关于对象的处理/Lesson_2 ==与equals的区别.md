@@ -19,7 +19,6 @@ System.out.println("a equals c: " + (a.equals(c))); // 输出 true
 ==运算符：</br>
 当用于比较基本数据类型时，它比较的是两个值是否相等。</br>
 当用于比较对象时，它比较的是两个对象的引用是否相同，即是否指向内存中的同一个对象。</br>
-</br>
 
 ```
 String str1 = new String("hello");  
@@ -32,7 +31,6 @@ System.out.println("str1 == str2: " + (str1 == str2)); // 输出 false，因为s
 equals()方法：</br>
 equals()方法被重写后，通常用于比较两个对象的内容是否相等。如果不重写equals()方法，那么它的行为与==相同，即比较的是对象的引用。</br>
 equals()方法不能用于基本数据类型的比较。</br>
-</br>
 
 ```
 String str3 = new String("hello");  
