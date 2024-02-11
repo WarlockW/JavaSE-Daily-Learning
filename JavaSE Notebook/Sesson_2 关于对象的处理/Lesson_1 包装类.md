@@ -16,6 +16,22 @@ boolean -> Boolean
 使用包装类的实际场景：</br>
 
 ```
+public class Recursive {
+    public static void main(){
+        // 把一个基础数据类型赋给Integet对象
+        Integer inObj = 5;
+        // 把一个基础数据类型赋给Objcet对象
+        Object boolObj = true;
 
+        // 把上述Integer对象再赋给int类型，无报错
+        int it = inObj;
+        // 把上述Objcet对象再赋给boolen类型，无报错
+        //!!!在这里用到了包装类以及instanceof jdk17引入的新特性
+        if(boolObj instanceof Boolean bool){
+                boolean b = bool;
+                System.out.println(b);
+            }
+        }
+    }
 
 ```
