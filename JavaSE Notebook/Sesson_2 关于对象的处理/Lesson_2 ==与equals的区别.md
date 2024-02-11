@@ -58,7 +58,8 @@ class Person {
     public boolean equals(Object obj) {  
         if (this == obj) return true;  
         if (obj == null || getClass() != obj.getClass()) return false;  
-        Person person = (Person) obj;  
+        Person person = (Person) obj;
+        //注意这里因为name是个String对象，String类型的equals没有被改写，因此还是默认的方法
         return name != null ? name.equals(person.name) : person.name == null;  
     }  
 }  
