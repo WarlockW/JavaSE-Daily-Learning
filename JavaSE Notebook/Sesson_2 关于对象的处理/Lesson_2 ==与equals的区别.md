@@ -2,6 +2,18 @@
 </br>
 1.性质不同：</br>
 ==是一个比较运算符，用于比较两个基本数据类型或对象引用的值是否相等。而equals()是一个方法，用于比较两个对象的内容是否相等。</br>
+```
+int a = 10;  
+int b = 20;
+int c = 10;  
+  
+// 使用 == 比较基本数据类型  
+System.out.println("a == b: " + (a == b)); // 输出 false
+System.out.println("a == c: " + (a == c)); // 输出 true
+// 使用 equals 比较基本数据类型
+System.out.println("a equals b: " + (a.equals(b))); // 输出 false
+System.out.println("a equals c: " + (a.equals(c))); // 输出 true
+```
 
 2.用途不同：</br>
 ==运算符：</br>
