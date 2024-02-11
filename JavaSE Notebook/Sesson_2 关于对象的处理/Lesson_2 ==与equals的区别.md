@@ -44,7 +44,37 @@ System.out.println("str3.equals(str4): " + str3.equals(str4)); // 输出 true，
 3.默认行为：</br>
 ==的默认行为是比较两个变量的值或内存地址。</br>
 equals()的默认行为依赖于类的实现。在Object类中，equals()的实现与==相同，但许多类（如String、Integer等）都重写了equals()方法以提供更有意义的比较。</br>
-</br>
+
+```
+class Person {  
+    private String name;  
+  
+    Person(String name) {  
+        this.name = name;  
+    }  
+  
+    // 重写equals方法  
+    @Override  
+    public boolean equals(Object obj) {  
+        if (this == obj) return true;  
+        if (obj == null || getClass() != obj.getClass()) return false;  
+        Person person = (Person) obj;  
+        return name != null ? name.equals(person.name) : person.name == null;  
+    }  
+}  
+  
+public class EqualsExample {  
+    public static void main(String[] args) {  
+        Person person1 = new Person("Alice");  
+        Person person2 = new Person("Alice");  
+  
+        // 使用 == 和 equals() 比较对象  
+        System.out.println("person1 == person2: " + (person1 == person2)); // 输出 false，因为person1和person2指向不同的对象  
+        System.out.println("person1.equals(person2): " + person1.equals(person2)); // 输出 true，因为person1和person2的内容相等（根据重写的equals方法）  
+    }  
+}
+```
+
 4.空值处理：</br>
 使用==比较一个对象和一个null值时，结果总是false。</br>
 使用equals()方法比较一个对象和一个null值时，会抛出NullPointerException，除非该方法被重写以处理这种情况。</br>
