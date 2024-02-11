@@ -28,6 +28,7 @@ public class Recursive {
         // 把上述Objcet对象再赋给boolen类型，无报错
         //!!!在这里用到了包装类以及instanceof jdk17引入的新特性
         if(boolObj instanceof Boolean bool){
+                // 将Boolen类再赋给boolen基本类
                 boolean b = bool;
                 System.out.println(b);
             }
