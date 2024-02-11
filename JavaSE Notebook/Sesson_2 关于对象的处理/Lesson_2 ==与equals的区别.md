@@ -48,7 +48,21 @@ equals()的默认行为依赖于类的实现。在Object类中，equals()的实�
 4.空值处理：</br>
 使用==比较一个对象和一个null值时，结果总是false。</br>
 使用equals()方法比较一个对象和一个null值时，会抛出NullPointerException，除非该方法被重写以处理这种情况。</br>
-</br>
+
+```
+String str5 = null;  
+String str6 = "world";  
+  
+// 使用 == 比较对象与null  
+System.out.println("str5 == null: " + (str5 == null)); // 输出 true  
+  
+// 使用 equals() 比较对象与null（会抛出NullPointerException）  
+// System.out.println("str5.equals(str6): " + str5.equals(str6)); // 会抛出NullPointerException  
+  
+// 安全地使用equals()方法，先检查是否为null  
+System.out.println("str5 equals str6: " + (str5 == null ? false : str5.equals(str6))); // 输出 false
+```
+
 5.可重写性：</br>
 ==运算符不能被重写。</br>
 equals()方法可以被重写以提供自定义的比较逻辑。</br>
