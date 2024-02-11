@@ -2,6 +2,7 @@
 </br>
 <h1>1.性质不同：</h1>
 ==是一个比较运算符，用于比较两个基本数据类型或对象引用的值是否相等。而equals()是一个方法，用于比较两个对象的内容是否相等。</br>
+
 ```
 int a = 10;  
 int b = 20;
@@ -14,6 +15,7 @@ System.out.println("a == c: " + (a == c)); // 输出 true
 System.out.println("a equals b: " + (a.equals(b))); // 输出 false
 System.out.println("a equals c: " + (a.equals(c))); // 输出 true
 ```
+
 
 <h1>2.用途不同：</h1>
 ==运算符：</br>
@@ -40,6 +42,7 @@ String str4 = str3; // str4引用str3指向的对象
 System.out.println("str3 == str4: " + (str3 == str4)); // 输出 true，因为str3和str4指向同一个对象  
 System.out.println("str3.equals(str4): " + str3.equals(str4)); // 输出 true，因为str3和str4的内容相等
 ```
+
 
 <h1>3.默认行为：</h1>
 ==的默认行为是比较两个变量的值或内存地址。</br>
@@ -75,6 +78,7 @@ public class EqualsExample {
     }  
 }
 ```
+
 
 <h1>4.空值处理：</h1>
 使用==比较一个对象和一个null值时，结果总是false。</br>
