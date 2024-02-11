@@ -20,10 +20,29 @@ System.out.println("a equals c: " + (a.equals(c))); // 输出 true
 当用于比较基本数据类型时，它比较的是两个值是否相等。</br>
 当用于比较对象时，它比较的是两个对象的引用是否相同，即是否指向内存中的同一个对象。</br>
 </br>
+
+```
+String str1 = new String("hello");  
+String str2 = new String("hello");  
+  
+// 使用 == 比较对象引用  
+System.out.println("str1 == str2: " + (str1 == str2)); // 输出 false，因为str1和str2指向不同的对象
+```
+
 equals()方法：</br>
 equals()方法被重写后，通常用于比较两个对象的内容是否相等。如果不重写equals()方法，那么它的行为与==相同，即比较的是对象的引用。</br>
 equals()方法不能用于基本数据类型的比较。</br>
 </br>
+
+```
+String str3 = new String("hello");  
+String str4 = str3; // str4引用str3指向的对象  
+  
+// 使用 == 和 equals() 比较对象  
+System.out.println("str3 == str4: " + (str3 == str4)); // 输出 true，因为str3和str4指向同一个对象  
+System.out.println("str3.equals(str4): " + str3.equals(str4)); // 输出 true，因为str3和str4的内容相等
+```
+
 3.默认行为：</br>
 ==的默认行为是比较两个变量的值或内存地址。</br>
 equals()的默认行为依赖于类的实现。在Object类中，equals()的实现与==相同，但许多类（如String、Integer等）都重写了equals()方法以提供更有意义的比较。</br>
