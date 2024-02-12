@@ -48,6 +48,36 @@ public class MyClass {
     }  
 }
 ```
+在这个例子中，CONSTANT_VALUE是一个final成员变量，它在声明时被赋值为100。anotherFinalValue也是一个final成员变量，但它在声明时没有赋值，而是在构造器中被赋值为200。voidValue没有被内部赋值（也可以理解为没有被其他内部成员使用），所以无法编译通过。</br>
+</br>
+需要注意的是，final关键字只保证变量的引用不会改变，而不是引用对象的内容不会改变。例如，如果final变量引用的是一个数组或对象，那么你不能改变这个变量引用到另一个数组或对象，但是你可以修改数组中的元素或对象的属性。</br>
+
+```
+public class MyClass {  
+    public final int[] finalArray;  
+  
+    public MyClass() {  
+        finalArray = new int[3];  
+        finalArray[0] = 1;  
+        finalArray[1] = 2;  
+        finalArray[2] = 3;  
+    }  
+  
+    public void modifyArrayContent() {  
+        // 可以修改数组的内容  
+        finalArray[0] = 4; // 这是允许的  
+    }  
+  
+    // 错误的示例：试图修改final变量的引用  
+    /*  
+    public void tryToModifyFinalReference() {  
+        finalArray = new int[5]; // 编译错误：不能修改final变量的引用  
+    }  
+    */  
+}
+```
+
+在这个例子中，finalArray是一个引用final数组的变量。你不能让finalArray引用另一个数组，但是你可以修改finalArray所引用数组的内容。
 
 <h1>final局部变量</h1>
 
