@@ -83,7 +83,8 @@ public class MyClass {
 
 <h1>2.final修饰方法</h1>
 
-在Java中，使用final关键字修饰一个方法表示这个方法不可以被子类重写（Override）。也就是说，如果一个类中包含了一个final方法，那么任何继承这个类的子类都不能提供这个方法的一个新的实现。这对于确保某些方法的行为在继承体系中保持一致性非常有用。比如Object类中的getClass就是被final修饰的方法，java不希望这个方法被后续继承的类改写；而toString和equals都没被final修饰，java希望后续继承的类可以根据情况重写这两个方法。</br>
+在Java中，使用final关键字修饰一个方法表示这个方法不可以被子类重写（Override）。也就是说，如果一个类中包含了一个final方法，那么任何继承这个类的子类都不能提供这个方法的一个新的实现。这对于确保某些方法的行为在继承体系中保持一致性非常有用。</br>
+比如Object类中的getClass就是被final修饰的方法，java不希望这个方法被后续继承的类改写；而toString和equals都没被final修饰，java希望后续继承的类可以根据情况重写这两个方法。</br>
 
 ```
 public class ParentClass {  
