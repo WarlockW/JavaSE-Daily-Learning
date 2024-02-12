@@ -77,8 +77,7 @@ public class MyClass {
 }
 ```
 
-在这个例子中，finalArray是一个引用final数组的变量。你不能让finalArray引用另一个数组，但是你可以修改finalArray所引用数组的内容。
+在这个例子中，finalArray是一个引用final数组的变量。你不能让finalArray引用另一个数组，但是你可以修改finalArray所引用数组的内容。</br>
+</br>
+！！！总结一下，final修饰基本类型变量时，变量的值不可变；而final修饰引用类型变量时，变量的引用不可变，但对象本身的内容（如果对象是可变的）可以被修改。！！！</br>
 
-<h1>2.final修饰局部变量</h1>
-
-<h1>3.final修饰基本类型变量（如int）和引用类型变量（如String）的区别</h1>
