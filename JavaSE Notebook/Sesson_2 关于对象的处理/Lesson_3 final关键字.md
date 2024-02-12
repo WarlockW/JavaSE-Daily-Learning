@@ -24,6 +24,9 @@ public class MyClass {
   
     // final成员变量，声明时没有赋值  
     public final int anotherFinalValue;  
+
+    //final成员变量，声明时没有赋值,且没有被内部方法或构造器使用到（赋值），因此编译不通过
+    // public final int voidValue;
   
     // 构造器  
     public MyClass() {  
