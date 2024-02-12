@@ -101,7 +101,8 @@ public class Singleton {
     // 主要是将构造器权限改为私有，防止通过new新建单例类的实例
     private Singleton() {}  
   
-    public static Singleton getInstance() {  
+    public static Singleton getInstance() {
+        //没有就新建一个单例，有就返回之前的
         if (instance == null) {  
             instance = new Singleton();  
         }  
