@@ -113,3 +113,35 @@ public class ChildClass extends ParentClass {
 </br>
 
 <h1>3.final修饰类</h1>
+在Java中，使用final关键字修饰一个类表示这个类不能被继承。换句话说，如果一个类被声明为final，那么任何其他类都不能继承它。这有助于确保某个类的行为不会被其他类所改变，从而提供了一种机制来创建不可变或不可扩展的类。</br>
+
+```
+public final class FinalClass {  
+    // FinalClass的实例方法和变量  
+    public void methodInFinalClass() {  
+        System.out.println("This is a method in FinalClass.");  
+    }  
+}  
+  
+// 尝试继承FinalClass会导致编译错误  
+/*  
+public class AnotherClass extends FinalClass {  
+    // 编译器会报错，因为FinalClass是final的，不能被继承  
+}  
+*/
+```
+
+在这个例子中，FinalClass被声明为final，因此任何尝试继承FinalClass的类（如AnotherClass）都会导致编译错误。</br>
+</br>
+使用final类的主要场景包括：</br>
+</br>
+工具类（Utility Classes）：这些类通常只包含静态方法，并且不需要有任何子类。例如，java.lang.Math类就是一个final类。</br>
+</br>
+设计不可变的类：有时，你可能想要创建一个不能被继承的类，以确保它的行为不会被子类修改。这通常与final方法和final字段一起使用，以确保对象的整体不可变性。</br>
+</br>
+安全性和控制：在某些情况下，你可能想要限制某些类的扩展性，以防止不受控制的扩展或修改。通过将类声明为final，你可以确保没有其他类能够扩展它。</br>
+</br>
+最终设计决策：有时候，类的设计者可能确信某个类不应该被继承，这可能是基于类的设计决策、性能考虑或其他因素。在这种情况下，可以使用final来明确表达这一决策。</br>
+</br>
+需要注意的是，final类仍然可以拥有final、protected、default（包级私有）或public的成员方法和变量。然而，由于类本身是final的，所以这些成员方法和变量不能被任何子类所访问或覆盖。</br>
+
