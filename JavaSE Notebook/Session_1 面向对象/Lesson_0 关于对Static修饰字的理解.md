@@ -79,8 +79,9 @@ public class StaticTest {
 ```
 public class Singleton {  
     // 在类加载时就完成了初始化，所以类加载较慢，但获取对象的速度快  
-    private static Singleton instance = new Singleton();  
-  
+    private static Singleton instance = new Singleton();
+
+    // 主要是将构造器权限改为私有，防止通过new新建单例类的实例
     private Singleton() {}  
   
     public static Singleton getInstance() {  
@@ -95,8 +96,9 @@ public class Singleton {
 ```
 public class Singleton {  
     // 延迟初始化，类加载快，但第一次获取对象时较慢  
-    private static Singleton instance;  
-  
+    private static Singleton instance;
+
+    // 主要是将构造器权限改为私有，防止通过new新建单例类的实例
     private Singleton() {}  
   
     public static Singleton getInstance() {  
