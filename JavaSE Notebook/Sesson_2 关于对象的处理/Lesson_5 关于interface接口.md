@@ -53,15 +53,26 @@ public interface Electronic {
 
 ```
 public class Computer implements Electronic {
-
     public static void main(String[] args) {
-        new Computer();
-    }
+        // 新建一个Computer对象
+        Computer a = new Computer();
 
-    @Override
-    public int getElectricityUse() {
-        return 0;
+        // Computer重写后的抽象方法，返回“0”
+        System.out.println(a.getElectricityUse());
+
+        // 可以直接使用接口的默认方法，返回“电子”
+        a.printDescription();
+
+        // 可以直接使用接口的静态方法，返回“false”和“true”
+        System.out.println(Electronic.isEnergyEfficient("LCD"));
+        System.out.println(Electronic.isEnergyEfficient("LED"));
+        }
+
+        // getElectricityUse()是接口的抽象方法，必须重写
+        @Override
+        public int getElectricityUse() {
+            return 0;
+        }
     }
-}
 ```
 
