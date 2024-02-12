@@ -73,6 +73,7 @@ public class StaticTest {
 
 <h2>单例类</h2>
 通过static实现的单例类是一种设计模式，它确保一个类只有一个实例，并提供一个全局访问点来获取该实例。单例模式在很多场景中都很有用，例如配置信息的读取、数据库连接池、线程池等。 <br/>
+<br/>
 1.饿汉式（Eager Initialization预加载模式）
 
 ```
@@ -88,6 +89,7 @@ public class Singleton {
 }
 ```
 
+<br/>
 2.懒汉式（Lazy Initialization懒加载模式）
 
 ```
@@ -104,5 +106,7 @@ public class Singleton {
         return instance;  
     }  
 }
+```
 
+<br/>
 3.其他类型略
