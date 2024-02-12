@@ -12,7 +12,7 @@ final 是 Java 中的一个关键字，它表示“最终的”或者“不可�
 
 此外，final 还可以和 static 一起使用来声明常量。这样的常量是全局的，属于类而不是实例，并且只会被初始化一次。</br>
 
-<h1>1.final修饰成员变量</h1>
+<h1>1.final修饰变量</h1>
 
 在Java中，当一个成员变量被声明为final，它表示这个变量的值在初始化后就不能被修改。这通常用于创建常量，即其值在程序的生命周期内不会改变的变量。</br>
 final成员变量可以在声明时直接赋值，也可以在构造方法中进行赋值。但是，它们只能被赋值一次。如果在声明时没有赋值，那么它们必须在构造器中被明确赋值。此外，final变量在声明时如果没有显式初始化，且构造器中也没有赋值，则会导致编译错误。</br>
@@ -81,3 +81,34 @@ public class MyClass {
 </br>
 ！！！总结一下，final修饰基本类型变量时，变量的值不可变；而final修饰引用类型变量时，变量的引用不可变，但对象本身的内容（如果对象是可变的）可以被修改。！！！</br>
 
+<h1>2.final修饰方法</h1>
+
+在Java中，使用final关键字修饰一个方法表示这个方法不可以被子类重写（Override）。也就是说，如果一个类中包含了一个final方法，那么任何继承这个类的子类都不能提供这个方法的一个新的实现。这对于确保某些方法的行为在继承体系中保持一致性非常有用。</br>
+
+```
+public class ParentClass {  
+    // final方法  
+    public final void finalMethod() {  
+        System.out.println("This is a final method in ParentClass.");  
+    }  
+}  
+  
+public class ChildClass extends ParentClass {  
+    // 尝试重写finalMethod会导致编译错误  
+    /*  
+    @Override  
+    public void finalMethod() {  
+        System.out.println("This is an attempt to override the final method in ChildClass.");  
+    }  
+    */  
+}
+```
+
+在这个例子中，ParentClass包含了一个final方法finalMethod。如果尝试在ChildClass中重写这个方法（即使使用@Override注解），编译器会报错，因为final方法是不允许被重写的。</br>
+</br>
+使用final方法的主要目的是为了防止子类修改父类中的某些方法行为。这通常是在设计API或库时非常有用的，因为它允许开发者提供一个稳定的接口，而不必担心子类会意外地改变方法的行为。</br>
+</br>
+值得注意的是，final方法仍然可以被继承，只是不能被重写。子类可以调用super.finalMethod()来访问父类中的final方法。此外，final方法可以被private、protected或public修饰，但是它们的行为会有所不同，特别是关于子类可访问性的方面。</br>
+</br>
+
+<h1>3.final修饰类</h1>
