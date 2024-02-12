@@ -93,3 +93,94 @@ public interface Serializable {
 </br>
 
 <h1>接口可以做什么</h1>
+1）使某些实现类具有我们想要的功能，比如说，实现了 Cloneable 接口的类具有拷贝的功能，实现了 Comparable 或者 Comparator 的类具有比较功能。</br>
+</br>
+Cloneable 和 Serializable 一样，都属于标记型接口，它们内部都是空的。实现了 Cloneable 接口的类可以使用 Object.clone() 方法，否则会抛出 CloneNotSupportedException。</br>
+
+```
+public class CloneableTest implements Cloneable {
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
+    public static void main(String[] args) throws CloneNotSupportedException {
+        CloneableTest c1 = new CloneableTest();
+        CloneableTest c2 = (CloneableTest) c1.clone();
+    }
+}
+```
+
+2）Java 原则上只支持单一继承，但通过接口可以实现多重继承的目的。
+
+如果有两个类共同继承（extends）一个有特定方法的父类，那么该方法会被两个子类重写。然后，如果你决定同时继承这两个子类，那么在你调用该重写方法时，编译器不能识别你要调用哪个子类的方法。</br>
+</br>
+ClassC 同时继承了 ClassA 和 ClassB，ClassC 的对象在调用 ClassA 和 ClassB 中重载的方法时，就不知道该调用 ClassA 的方法，还是 ClassB 的方法。接口没有这方面的困扰。来定义两个接口，Fly 会飞，Run 会跑。</br>
+
+```
+//接口一
+public interface Fly {
+    void fly();
+}
+
+//接口二
+public interface Run {
+    void run();
+}
+
+然后让一个类同时实现这两个接口。
+
+public class Pig implements Fly,Run{
+    @Override
+    public void fly() {
+        System.out.println("会飞的猪");
+    }
+
+    @Override
+    public void run() {
+        System.out.println("会跑的猪");
+    }
+}
+```
+
+这就在某种形式上达到了多重继承的目的：现实世界里，猪的确只会跑，但在雷军的眼里，站在风口的猪就会飞，这就需要赋予这只猪更多的能力，通过抽象类是无法实现的，只能通过接口。</br>
+
+3）实现多态。</br>
+</br>
+什么是多态呢？通俗的理解，就是同一个事件发生在不同的对象上会产生不同的结果，鼠标左键点击窗口上的 X 号可以关闭窗口，点击超链接却可以打开新的网页。多态可以通过继承（extends）的关系实现，也可以通过接口的形式实现。来看这样一个例子。
+
+```
+// 定义一个接口
+public interface Shape {
+    String name();
+}
+
+// 实现类一
+public class Circle implements Shape {
+    @Override
+    public String name() {
+        return "圆";
+    }
+}
+
+// 实现类二
+public class Square implements Shape {
+    @Override
+    public String name() {
+        return "正方形";
+    }
+}
+```
+
+04、接口与抽象类的区别</br>
+
+1）语法层面上
+
+接口中不能有 public 和 protected 修饰的方法，抽象类中可以有。
+接口中的变量只能是隐式的常量，抽象类中可以有任意类型的变量。
+一个类只能继承一个抽象类，但却可以实现多个接口。
+2）设计层面上
+
+抽象类是对类的一种抽象，继承抽象类的类和抽象类本身是一种 is-a 的关系。
+
+接口是对类的某种行为的一种抽象，接口和类之间并没有很强的关联关系，所有的类都可以实现 Serializable 接口，从而具有序列化的功能。
