@@ -70,5 +70,39 @@ public class StaticTest {
 
 原理为，info增加static修饰词后，相比不加static会在整体代码运行前先行加载到内存中，因此可以成功执行。<br/>
 
-从面向对象的实际意义上来看----
-从运行的内存原理上来看----
+
+<h2>单例类</h2>
+通过static实现的单例类是一种设计模式，它确保一个类只有一个实例，并提供一个全局访问点来获取该实例。单例模式在很多场景中都很有用，例如配置信息的读取、数据库连接池、线程池等。 <br/>
+1.饿汉式（Eager Initialization预加载模式）
+
+```
+public class Singleton {  
+    // 在类加载时就完成了初始化，所以类加载较慢，但获取对象的速度快  
+    private static Singleton instance = new Singleton();  
+  
+    private Singleton() {}  
+  
+    public static Singleton getInstance() {  
+        return instance;  
+    }  
+}
+```
+
+2.懒汉式（Lazy Initialization懒加载模式）
+
+```
+public class Singleton {  
+    // 延迟初始化，类加载快，但第一次获取对象时较慢  
+    private static Singleton instance;  
+  
+    private Singleton() {}  
+  
+    public static Singleton getInstance() {  
+        if (instance == null) {  
+            instance = new Singleton();  
+        }  
+        return instance;  
+    }  
+}
+
+3.其他类型略
