@@ -30,3 +30,35 @@ class Bora {
     // 方法略
 }
 ```
+
+如果以后有新的车，需要继续加，每增加一种车，你就要去改写 Driver 类。</br>
+</br>
+如果用了接口，简单了：</br>
+
+```
+public class Driver {
+    public void drive(Car car){
+        // 驾驶汽车
+    } 
+}
+
+interface Car{
+    // 方法略
+}
+```
+
+如果以后增加车的种类，上面的代码不用改，每增加一种车，只要：</br>
+
+```
+class Santana implements Car {
+    // 方法略
+}
+
+class Fit implements Car {
+    // 方法略
+}
+
+class Bora implements Car {
+    // 方法略
+}
+```
