@@ -76,3 +76,20 @@ public class Computer implements Electronic {
     }
 ```
 
+2）接口可以是空的，既不定义变量，也不定义方法。</br>
+
+```
+public interface Serializable {
+}
+```
+
+3）不要在定义接口的时候使用 final 关键字，否则会报编译错误，因为接口就是为了让子类实现的，而 final 阻止了这种行为。</br>
+</br>
+
+4）接口的抽象方法不能是 private、protected 或者 final。理由同上，本来就是需要子类重写的，加上权限限制没有意义。</br>
+</br>
+
+5）接口的变量是隐式 public static final，所以其值无法改变。</br>
+</br>
+
+<h1>接口可以做什么</h1>
