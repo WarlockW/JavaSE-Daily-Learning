@@ -71,40 +71,6 @@ public class StaticTest {
 
 原理为，info增加static修饰词后，相比不加static会在整体代码运行前先行加载到内存中，因此可以成功执行。<br/>
 <br/>
-！！！一个非常形象的例子！！！<br/>
-假如a类中有非静态成员public x和main方法，b类中有静态成员public y，在a的main函数中不能访问x但是可以访问y对吗<br/>
-<br/>
-在Java中，如果a类有一个非静态成员x和一个main方法，而b类有一个静态成员y，那么在a类的main函数中：<br/>
-<br/>
-非静态成员x（属于a类）在a类的main方法中不能直接访问，因为非静态成员需要通过类的实例来访问。如果你尝试在main方法中直接访问非静态成员x，编译器会报错，因为main方法是静态的，它不能直接访问非静态成员。<br/>
-<br/>
-对于b类的静态成员y，如果b类与a类在同一个包内，或者y成员是public的并且被导出（即b类在另一个包中但y成员是public的），那么a类的main方法可以通过b.y来访问它，前提是a类的main方法知道b类的存在，并且b类已经被正确地导入到a类中。<br/>
-
-```
-// B.java  
-public class B {  
-    public static int y = 42; // 静态成员  
-}  
-  
-// A.java  
-public class A {  
-    public int x = 10; // 非静态成员  
-  
-    public static void main(String[] args) {  
-        // 直接访问非静态成员x是不允许的，会导致编译错误  
-        // System.out.println(x); // 错误：非静态变量x不能在静态上下文中引用  
-  
-        // 可以访问B类的静态成员y  
-        System.out.println(B.y); // 输出：42  
-  
-        // 如果需要访问A类的非静态成员x，需要创建A类的实例  
-        A instance = new A();  
-        System.out.println(instance.x); // 输出：10  
-    }  
-}
-```
-
-在上面的代码中，A类的main方法不能直接访问非静态成员x，但是它可以访问B类的静态成员y。如果需要访问A类的非静态成员x，则需要在main方法中创建A类的一个实例，然后通过这个实例来访问x。<br/>
 
 <h2>单例类</h2>
 通过static实现的单例类是一种设计模式，它确保一个类只有一个实例，并提供一个全局访问点来获取该实例。单例模式在很多场景中都很有用，例如配置信息的读取、数据库连接池、线程池等。 <br/>
