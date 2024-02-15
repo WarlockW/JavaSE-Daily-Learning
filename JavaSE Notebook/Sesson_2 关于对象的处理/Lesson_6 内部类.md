@@ -7,12 +7,22 @@ public class OuterClass {
     // 实例内部类  
     class InnerClass {  
         private int innerValue = 200;  
-  
+
+        // 内部类可以访问外部类和内部类的成员
         public void display() {  
             System.out.println("Outer Value: " + outerValue);  
             System.out.println("Inner Value: " + innerValue);  
         }  
-    }  
+    }
+
+    public void visitInnner(){
+        // 外部类直接访问内部类成员会报错！！！
+        // 原因是内部类现在还没有，要想访问内部成员需要先新建内部类对象
+        //System.out.println(innerValue);
+        
+        // 需要新建一个对象后访问
+        System.out.println((new InnerClass()).innerValue);
+    }
   
     public static void main(String[] args) {  
         OuterClass outer = new OuterClass();  
@@ -22,8 +32,22 @@ public class OuterClass {
     }  
 }
 ```
+
 <h1>非静态内部类（Instance Inner Class）</h1>
 是定义在外部类中的非静态类。这意味着非静态内部类依赖于外部类的实例，因此它不能直接实例化，必须通过外部类的实例来创建。非静态内部类可以访问外部类的所有成员，包括私有成员。</br>
+
+````
+public class StaticTest {
+    private class inner{}
+
+    public static void main(String[] args){
+        var a = new StaticTest.inner();
+        outer b = new outer();
+    }
+}
+
+class outer{}
+```
 
 <h1>静态内部类（Static Inner Class）：</h1>
 静态内部类是在外部类中定义为static的类。静态内部类可以访问外部类的静态成员，但不能访问外部类的非静态成员。静态内部类可以像普通类一样通过类名来创建实例。</br>
