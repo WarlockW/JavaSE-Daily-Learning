@@ -25,13 +25,18 @@ public class OuterClass {
     }
   
     public static void main(String[] args) {  
-        OuterClass outer = new OuterClass();  
+        OuterClass outer = new OuterClass();
+        outer.visitInnner(); 
         // 创建内部类实例，需要通过外部类实例  
         InnerClass inner = outer.new InnerClass();  
         inner.display();  
     }  
 }
 ```
+通过上述代码可以看出一些注意事项:</br>
+1. </br>
+2. </br>
+3. </br>
 
 <h1>非静态内部类（Instance Inner Class）</h1>
 是定义在外部类中的非静态类。这意味着非静态内部类依赖于外部类的实例，因此它不能直接实例化，必须通过外部类的实例来创建。非静态内部类可以访问外部类的所有成员，包括私有成员。</br>
