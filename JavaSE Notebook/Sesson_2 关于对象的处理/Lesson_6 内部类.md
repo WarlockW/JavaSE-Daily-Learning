@@ -64,6 +64,34 @@ public class Outer {
 <h1>静态内部类（Static Inner Class）：</h1>
 静态内部类是在外部类中定义为static的类。静态内部类可以访问外部类的静态成员，但不能访问外部类的非静态成员。静态内部类可以像普通类一样通过类名来创建实例。</br>
 
+```
+public class StaticTest {
+    // 非静态内部类
+    private static class innerStatic{
+        private static int innerStaticVar = 100;
+        private static void innerStaticFunc(){}
+    }
+
+    // 静态内部类
+    private class innerInstance{
+        private int innerInstanceVar = 200;
+        private void innerInstanceFunc(){};
+    }
+
+    public static void main(String[] args){
+        //调用非静态内部类成员
+        int StaticVar = innerStatic.innerStaticVar;// 静态变量
+        innerStatic.innerStaticFunc();// 静态方法
+
+        // 调用静态内部类成员
+        StaticTest outer = new StaticTest();// 创建外部类
+        innerInstance inner = outer.new innerInstance(); // 创建内部类
+        int InstanceVar = inner.innerInstanceVar;// 非静态变量
+        inner.innerInstanceFunc();// 非静态方法
+    }
+}
+```
+
 <h1>实例内部类（Instance Inner Class）：</h1>
 实例内部类是最常见的内部类类型。实例内部类可以访问外部类的所有成员（包括私有成员）。实例内部类必须通过外部类的实例来创建。</br>
 
