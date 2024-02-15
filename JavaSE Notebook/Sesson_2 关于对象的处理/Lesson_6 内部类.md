@@ -7,7 +7,7 @@ public class OuterClass {
     // 实例内部类  
     class InnerClass {  
         private int innerValue = 200;  
-
+        // 【关注点1】
         // 内部类可以访问外部类和内部类的成员
         public void display() {  
             System.out.println("Outer Value: " + outerValue);  
@@ -16,6 +16,7 @@ public class OuterClass {
     }
 
     public void visitInnner(){
+        // 【关注点2】
         // 外部类直接访问内部类成员会报错！！！
         // 原因是内部类现在还没有，要想访问内部成员需要先新建内部类对象
         //System.out.println(innerValue);
@@ -26,17 +27,21 @@ public class OuterClass {
   
     public static void main(String[] args) {  
         OuterClass outer = new OuterClass();
-        outer.visitInnner(); 
+        outer.visitInnner();
+        // 【关注点3】
         // 创建内部类实例，需要通过外部类实例  
-        InnerClass inner = outer.new InnerClass();  
-        inner.display();  
+        InnerClass inner = outer.new InnerClass();
+        //访问内部类方法
+        inner.display();
+        //访问内部类属性
+        System.out.println(inner.innerValue);
     }  
 }
 ```
 
 通过上述代码可以看出一些注意事项:</br>
-1. </br>
-2. </br>
+1.访问内部类的成员需要先新建一个内部类对象 </br>
+2. 内部类可以随意访问外部类的成员，但是外部类访问内部类需要先新建内部类对象</br>
 3. </br>
 
 <h1>非静态内部类（Instance Inner Class）</h1>
