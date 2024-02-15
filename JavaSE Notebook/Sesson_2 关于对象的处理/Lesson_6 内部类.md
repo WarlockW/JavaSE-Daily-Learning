@@ -48,16 +48,16 @@ public class OuterClass {
 是定义在外部类中的非静态类。这意味着非静态内部类依赖于外部类的实例，因此它不能直接实例化，必须通过外部类的实例来创建。非静态内部类可以访问外部类的所有成员，包括私有成员。</br>
 
 ```
-public class StaticTest {
+public class Outer {
     private class inner{}
 
     public static void main(String[] args){
-        var a = new StaticTest.inner();
-        outer b = new outer();
+        // 注意要访问内部类，先要新建外部类，然后通过外部类新建内部类
+        // 语法为 【外部类对象.new 内部类对象】
+        Outer outer = new Outer();
+        inner a = outer.new inner();
     }
 }
-
-class outer{}
 ```
 
 
