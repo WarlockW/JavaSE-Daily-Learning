@@ -42,7 +42,7 @@ public class OuterClass {
 <h1>非静态内部类（Instance Inner Class）</h1>
 是定义在外部类中的非静态类。这意味着非静态内部类依赖于外部类的实例，因此它不能直接实例化，必须通过外部类的实例来创建。非静态内部类可以访问外部类的所有成员，包括私有成员。</br>
 
-````
+```
 public class StaticTest {
     private class inner{}
 
@@ -54,6 +54,7 @@ public class StaticTest {
 
 class outer{}
 ```
+
 
 <h1>静态内部类（Static Inner Class）：</h1>
 静态内部类是在外部类中定义为static的类。静态内部类可以访问外部类的静态成员，但不能访问外部类的非静态成员。静态内部类可以像普通类一样通过类名来创建实例。</br>
