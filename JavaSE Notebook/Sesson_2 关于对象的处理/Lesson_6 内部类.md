@@ -96,8 +96,44 @@ public class StaticTest {
 【静态与非静态内部类的访问方式如上所示】
 
 
-<h1>局部内部类（Local Inner Class）：</h1>
+<h1>【鸡肋功能】局部内部类（Local Inner Class）：</h1>
 局部内部类是在外部类的方法中定义的类。局部内部类的作用域被限制在定义它的方法或代码块中。</br>
+
+```
+public class OuterClass {  
+      
+    public void someMethod() {
+ 
+        // 定义一个局部内部类  
+        class LocalInnerClass {  
+            int value;  
+  
+            LocalInnerClass(int value) {  
+                this.value = value;  
+            }  
+  
+            void printValue() {  
+                System.out.println("Value inside local inner class: " + value);  
+            }  
+        }  
+  
+        // 在方法内部创建局部内部类的实例并调用其方法  
+        LocalInnerClass lic = new LocalInnerClass(42);  
+        lic.printValue();  
+  
+        // 尝试在方法外部访问局部内部类（这将导致编译错误）  
+        // LocalInnerClass licOutside = new LocalInnerClass(43); // 错误！  
+    }  
+  
+    public static void main(String[] args) {  
+        OuterClass outer = new OuterClass();  
+        outer.someMethod(); // 调用包含局部内部类的方法  
+          
+        // 尝试在main方法中直接创建局部内部类的实例（这将导致编译错误）  
+        // OuterClass.LocalInnerClass licDirect = new OuterClass.LocalInnerClass(44); // 错误！  
+    }  
+}
+```
 
 <h1>匿名内部类（Anonymous Inner Class）：</h1>
 匿名内部类是没有名字的内部类，通常用于实现一个接口或扩展一个类，并且只使用一次。匿名内部类通常用于简化代码，特别是在需要实现简单接口或创建简单对象时。</br>
