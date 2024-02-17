@@ -41,3 +41,53 @@ x -> System.out.println(x)
 函数式接口（Functional Interface）是Java 8引入的一个新概念，它是只有一个抽象方法的接口。由于只有一个抽象方法，因此该接口的类型可以用一个方法引用（method reference）或者Lambda表达式来表示。函数式接口是Java实现函数式编程的基础。</br>
 </br>
 函数式接口可以使用@FunctionalInterface注解进行标注，但并不是强制的。如果接口不符合函数式接口的定义（即包含多于一个抽象方法），编译器会报错。</br>
+</br>
+举一个简单的例子</br>
+首先，定义一个函数式接口，它表示一个能够接收两个整数参数并返回一个整数的操作：</br>
+
+```
+@FunctionalInterface  
+interface MathOperation {  
+    int apply(int a, int b);  
+}
+```
+
+```
+public class CustomFunctionalExample {  
+  
+    public static void main(String[] args) {  
+        // 使用Lambda表达式创建一个MathOperation实例，实现加法操作  
+        MathOperation addition = (a, b) -> a + b;  
+  
+        // 使用Lambda表达式创建一个MathOperation实例，实现减法操作  
+        MathOperation subtraction = (a, b) -> a - b;  
+  
+        // 使用Lambda表达式创建一个MathOperation实例，实现乘法操作  
+        MathOperation multiplication = (a, b) -> a * b;  
+  
+        // 使用Lambda表达式创建一个MathOperation实例，实现除法操作  
+        MathOperation division = (a, b) -> b != 0 ? a / b : 0; // 避免除以零的错误  
+  
+        // 测试加法操作  
+        int sum = applyOperation(10, 5, addition);  
+        System.out.println("Sum: " + sum); // 输出：Sum: 15  
+  
+        // 测试减法操作  
+        int difference = applyOperation(10, 5, subtraction);  
+        System.out.println("Difference: " + difference); // 输出：Difference: 5  
+  
+        // 测试乘法操作  
+        int product = applyOperation(10, 5, multiplication);  
+        System.out.println("Product: " + product); // 输出：Product: 50  
+  
+        // 测试除法操作  
+        int quotient = applyOperation(10, 5, division);  
+        System.out.println("Quotient: " + quotient); // 输出：Quotient: 2  
+    }  
+  
+    // 一个静态方法，接受两个整数和一个MathOperation实例，并应用该操作  
+    public static int applyOperation(int a, int b, MathOperation operation) {  
+        return operation.apply(a, b);  
+    }  
+}
+```
