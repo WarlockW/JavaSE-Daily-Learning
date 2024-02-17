@@ -46,48 +46,33 @@ x -> System.out.println(x)
 首先，定义一个函数式接口，它表示一个能够接收两个整数参数并返回一个整数的操作：</br>
 
 ```
+// 自定义函数式接口  
 @FunctionalInterface  
-interface MathOperation {  
-    int apply(int a, int b);  
+interface MyFunction {
+    // 定义抽象方法apply，后续的lamda表达式用于实现这个方法
+    int apply(int x);  
 }
 ```
 
 ```
-public class CustomFunctionalExample {  
+public class CustomFunctionalInterfaceExample {  
   
-    public static void main(String[] args) {  
-        // 使用Lambda表达式创建一个MathOperation实例，实现加法操作  
-        MathOperation addition = (a, b) -> a + b;  
+    public static void main(String[] args) {
+        // 【第一部分】
+        // 创建一个MyFunction接口的实例，命名为squareFunction，它接受一个int并返回它的平方  
+        MyFunction squareFunction = x -> x * x;  
   
-        // 使用Lambda表达式创建一个MathOperation实例，实现减法操作  
-        MathOperation subtraction = (a, b) -> a - b;  
+        // 使用MyFunction接口实例计算一个数的平方  
+        int square = squareFunction.apply(5);  
+        System.out.println("Square of 5 is: " + square); // 输出：Square of 5 is: 25
+
+        // 【第二部分】
+        // 创建一个MyFunction接口的实例，命名为cubeFunction，它接受一个int并返回它的立方  
+        MyFunction cubeFunction = x -> x * x * x;  
   
-        // 使用Lambda表达式创建一个MathOperation实例，实现乘法操作  
-        MathOperation multiplication = (a, b) -> a * b;  
-  
-        // 使用Lambda表达式创建一个MathOperation实例，实现除法操作  
-        MathOperation division = (a, b) -> b != 0 ? a / b : 0; // 避免除以零的错误  
-  
-        // 测试加法操作  
-        int sum = applyOperation(10, 5, addition);  
-        System.out.println("Sum: " + sum); // 输出：Sum: 15  
-  
-        // 测试减法操作  
-        int difference = applyOperation(10, 5, subtraction);  
-        System.out.println("Difference: " + difference); // 输出：Difference: 5  
-  
-        // 测试乘法操作  
-        int product = applyOperation(10, 5, multiplication);  
-        System.out.println("Product: " + product); // 输出：Product: 50  
-  
-        // 测试除法操作  
-        int quotient = applyOperation(10, 5, division);  
-        System.out.println("Quotient: " + quotient); // 输出：Quotient: 2  
-    }  
-  
-    // 一个静态方法，接受两个整数和一个MathOperation实例，并应用该操作  
-    public static int applyOperation(int a, int b, MathOperation operation) {  
-        return operation.apply(a, b);  
+        // 使用MyFunction接口实例计算一个数的立方  
+        int cube = cubeFunction.apply(3);  
+        System.out.println("Cube of 3 is: " + cube); // 输出：Cube of 3 is: 27  
     }  
 }
 ```
