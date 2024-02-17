@@ -40,6 +40,8 @@ x -> System.out.println(x)
 <h1>函数式接口</h1>
 函数式接口（Functional Interface）是Java 8引入的一个新概念，它是只有一个抽象方法的接口。由于只有一个抽象方法，因此该接口的类型可以用一个方法引用（method reference）或者Lambda表达式来表示。函数式接口是Java实现函数式编程的基础。</br>
 </br>
+函数式接口的意义在于简化代码，特别是当需要表示一个单一功能的方法时。通过函数式接口，你可以避免创建传统的匿名内部类或实现整个接口，而是使用Lambda表达式或方法引用来简洁地表示这个单一功能。这使得代码更加简洁、清晰，并且减少了样板代码的数量。
+</br>
 函数式接口可以使用@FunctionalInterface注解进行标注，但并不是强制的。如果接口不符合函数式接口的定义（即包含多于一个抽象方法），编译器会报错。</br>
 </br>
 举一个简单的例子</br>
@@ -181,5 +183,42 @@ public class BiFunctionExample {
     }  
 }
 ```
-<h1>函数式接口的实用意义</h1>
-函数式接口的意义在于简化代码，特别是当需要表示一个单一功能的方法时。通过函数式接口，你可以避免创建传统的匿名内部类或实现整个接口，而是使用Lambda表达式或方法引用来简洁地表示这个单一功能。这使得代码更加简洁、清晰，并且减少了样板代码的数量。
+
+<h1>方法引用与构造器引用</h1>
+
+<h2>1.静态方法引用：使用类名引用一个静态方法。</h2>
+
+```
+import java.util.function.BiFunction;  
+  
+public class StaticMethodReferenceExample {  
+    public static void main(String[] args) {  
+        // 使用静态方法引用来比较两个整数的大小  
+        BiFunction<Integer, Integer, Integer> maxFunction = Math::max;  
+  
+        // 使用静态方法引用来打印最大值  
+        int a = 10;  
+        int b = 20;  
+        int max = maxFunction.apply(a, b);  
+        System.out.println("The maximum value is: " + max); // 输出: The maximum value is: 20  
+```
+
+<h2>2.特定对象的实例方法引用：使用特定对象的引用来调用其实例方法。</h2>
+
+```
+String str = "Hello";  
+Predicate<String> methodRef = str::startsWith; // 引用 str 对象的 startsWith 方法  
+boolean result = methodRef.test("He"); // 等价于 str.startsWith("He")
+```
+
+<h2>3.特定类型的任意对象的实例方法引用：使用特定类型的引用来调用其实例方法，不依赖于特定的对象实例。</h2>
+
+```
+待补充
+```
+
+<h2>4.构造器引用：使用类名引用一个构造器。</h2>
+
+```
+待补充
+```
