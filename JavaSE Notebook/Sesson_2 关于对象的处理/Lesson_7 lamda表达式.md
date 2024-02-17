@@ -76,3 +76,5 @@ public class CustomFunctionalInterfaceExample {
     }  
 }
 ```
+
+在这个例子中，我们定义了一个简单的函数式接口MyFunction，它只有一个抽象方法apply。然后，我们创建了两个Lambda表达式，分别实现了MyFunction接口来计算一个整数的平方和立方。最后，我们通过调用apply方法来执行这些计算并打印结果。
