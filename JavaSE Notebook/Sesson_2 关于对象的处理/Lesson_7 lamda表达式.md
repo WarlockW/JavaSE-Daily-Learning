@@ -104,6 +104,26 @@ public class FunctionExample {
 }
 ```
 
+<h2>使用Predicate接口</h2>
+Predicate接口接受一个参数并返回一个布尔值，通常用于测试条件。
+
+```
+import java.util.function.Predicate;  
+  
+public class PredicateExample {  
+    public static void main(String[] args) {  
+        // 创建一个Predicate实例，检查一个数是否是偶数  
+        Predicate<Integer> isEven = num -> num % 2 == 0;  
+  
+        // 使用Predicate实例  
+        int number = 4;  
+        boolean isEvenNumber = isEven.test(number);  
+  
+        System.out.println("Is " + number + " even? " + isEvenNumber); // 输出：Is 4 even? true  
+    }  
+}
+```
+
 <h2>使用Consumer接口</h2>
 Consumer接口接受一个参数并不返回任何结果，通常用于执行一个动作。
 
@@ -123,3 +143,42 @@ public class ConsumerExample {
     }  
 }
 ```
+
+<h2>使用Supplier接口</h2>
+Supplier接口不接受参数并返回一个结果，通常用于生成值。
+
+```
+import java.util.function.Supplier;  
+  
+public class SupplierExample {  
+    public static void main(String[] args) {  
+        // 创建一个Supplier实例，用于生成随机整数  
+        Supplier<Integer> getRandomInt = () -> (int) (Math.random() * 100);  
+  
+        // 使用Supplier实例  
+        int randomInt = getRandomInt.get();  
+  
+        System.out.println("Random Integer: " + randomInt); // 输出：Random Integer: [一个随机整数]  
+    }  
+}
+```
+
+<h2>使用BiFunction接口</h2>
+BiFunction接口接受两个参数并返回一个结果，常用于二元操作。
+
+```
+import java.util.function.BiFunction;  
+  
+public class BiFunctionExample {  
+    public static void main(String[] args) {  
+        // 创建一个BiFunction实例，用于将两个整数相加  
+        BiFunction<Integer, Integer, Integer> add = (a, b) -> a + b;  
+  
+        // 使用BiFunction实例  
+        int result = add.apply(5, 3);  
+  
+        System.out.println("Result of adding 5 and 3: " + result); // 输出：Result of adding 5 and 3: 8  
+    }  
+}
+```
+
