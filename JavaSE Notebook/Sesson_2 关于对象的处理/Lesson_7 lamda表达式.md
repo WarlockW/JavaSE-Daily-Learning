@@ -78,3 +78,48 @@ public class CustomFunctionalInterfaceExample {
 ```
 
 在这个例子中，我们定义了一个简单的函数式接口MyFunction，它只有一个抽象方法apply。然后，我们创建了两个Lambda表达式，分别实现了MyFunction接口来计算一个整数的平方和立方。最后，我们通过调用apply方法来执行这些计算并打印结果。
+
+<h1>如何使用java.util.function函数式</h1>
+在Java中，java.util.function包提供了许多函数式接口，它们代表了不同类型的函数，这些函数可以接受一个或多个参数，并产生一个结果或不产生结果（例如，执行一个动作）。以下是如何在代码中使用一些常见的java.util.function接口类的例子：</br>
+
+<h2>使用Function接口</h2>
+Function接口接受一个参数并返回一个结果。它常用于映射操作。
+
+```
+import java.util.function.Function;  
+  
+public class FunctionExample {  
+    public static void main(String[] args) {  
+        // 创建一个Function实例，将字符串转换为大写
+        Function<String, String> toUpperCaseFunction = low -> low.toUpperCase();
+        //  或写成
+        //Function<String, String> toUpperCase = String::toUpperCase;  
+  
+        // 使用Function实例  
+        String lowerCaseString = "hello";  
+        String upperCaseString = toUpperCase.apply(lowerCaseString);  
+  
+        System.out.println(upperCaseString); // 输出：HELLO  
+    }  
+}
+```
+
+<h2>使用Consumer接口</h2>
+Consumer接口接受一个参数并不返回任何结果，通常用于执行一个动作。
+
+```
+import java.util.function.Consumer;  
+  
+public class ConsumerExample {  
+    public static void main(String[] args) {  
+        // 创建一个Consumer实例，用于打印字符串  
+        Consumer<String> printString = System.out::println;  
+  
+        // 使用Consumer实例  
+        String message = "Hello, Consumer!";  
+        printString.accept(message);  
+  
+        // 输出：Hello, Consumer!  
+    }  
+}
+```
