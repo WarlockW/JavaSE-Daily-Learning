@@ -37,6 +37,47 @@ x -> System.out.println(x)
 }
 ```
 
+<h1>主要作用</h1>
+Lambda表达式确实是为了解决某些方法没有必要封装在某个类中，从而简化代码的问题。在Java 8及以后的版本中，引入Lambda表达式主要是为了支持函数式编程风格，使得代码更加简洁、清晰和易于维护。</br>
+</br>
+在传统的Java编程中，如果需要传递一个函数作为参数或者需要定义一个简单的回调函数，通常需要创建一个匿名内部类来实现。这种方式虽然可以实现功能，但是代码量较大，且可读性不高。而Lambda表达式的引入，允许我们以更加简洁的方式表示这些函数，而无需创建额外的类。</br>
+</br>
+不使用lamda表达式，代码较为臃肿</br>
+
+```
+public class Test implements A{
+
+    public void m(){
+        System.out.println("方法的实现--");
+    };
+
+    public static void main(String[] args) {
+    new Test().m();
+
+    }
+}
+
+interface A {
+    void m();
+}
+```
+
+使用lamda表达式，代码较为简洁
+
+```
+public class Test{
+    public static void main(String[] args) {
+        A a = ()->{System.out.println("方法的实现--");
+        };
+        a.m();
+    }
+}
+
+interface A {
+    void m();
+}
+```
+
 <h1>函数式接口</h1>
 函数式接口（Functional Interface）是Java 8引入的一个新概念，它是只有一个抽象方法的接口。由于只有一个抽象方法，因此该接口的类型可以用一个方法引用（method reference）或者Lambda表达式来表示。函数式接口是Java实现函数式编程的基础。</br>
 </br>
