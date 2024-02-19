@@ -141,3 +141,26 @@ enum SeasonEnum {
     
 }
 ```
+
+<h2>传统方式实现枚举类的差异点</h2>
+
+相同点<br/>
+<br/>
+1.类中属性都使用private final修饰<br/>
+<br/>
+2.类中有属性必须提供构造方法为其赋值<br/>
+<br/>
+差异点<br/>
+1.创建固定对象的位置<br/>
+自定义枚举中创建固定对象可以放在任何的位置，enum枚举类创建固定对象必须在最上面。<br/>
+<br/>
+2.创建固定对象的方式<br/>
+<br/>
+自定义枚举类：publicstaticfinalSeason SPRING = new Season("spring","春暖花开");<br/>
+<br/>
+使用自定义枚举创建的对象之间用;分割<br/>
+<br/>
+enum枚举类：SPRING ("spring","春暖花开")<br/>
+<br/>
+使用enum创建的对象之间用,分割最后使用;<br/>
+
