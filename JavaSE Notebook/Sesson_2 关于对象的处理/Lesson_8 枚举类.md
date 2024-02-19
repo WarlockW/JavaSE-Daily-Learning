@@ -5,6 +5,7 @@
 <h2>传统方式实现枚举类</h2>
 
 ```
+// 测试类
 public class SeasonTest {
     public static void main(String[] args) {
         Season spring = Season.SPRING;
