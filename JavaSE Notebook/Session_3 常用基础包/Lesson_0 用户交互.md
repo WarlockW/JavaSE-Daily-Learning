@@ -12,7 +12,18 @@ nextXxx():
 获取下一个输入工页。 Xxx的含义与前一个方法中的Xxx相同。
 在默认情况下， Scanner 使用空白(包括空格、 Tab 空白、回车)作为多个输入项之间的分隔符。
 ```
- 
-```
 
+Scanner不仅能读取用户的键盘输入，还可以读取文件输入。只要在创建 Scanner对象时传入一个 File对象作为参数，就可以让 Scanner读取该文件的内容。
+```
+import java.io.File;
+import java.util.Scanner;
+
+public class ScannerTest{
+    public static void main(String[] args)throws Exception{
+        Scanner sc = new Scanner(new File("/Users/warlockw/Desktop/L4jTest/src/main/java/1.txt"));
+        while (sc.hasNextLine()){
+            System.out.println(sc.nextLine());
+        }
+    }
+}
 ```
