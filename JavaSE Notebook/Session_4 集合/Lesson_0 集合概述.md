@@ -16,9 +16,9 @@ Map：一种通过键值（key-value）查找的映射表集合，例如，根�
 栈和队列----栈：先进后出(子弹夹,杯子)；队列：先进先出(排队,管子)<br>
 
 <h1>List类与Set类</h1>
-
+![屏幕截图 2024-03-26 102524](https://github.com/WarlockW/JavaSE_Daily_Learning/assets/64346345/08b819cc-c2c7-4fc4-8c77-8279eb4601ab)
 
 
 <h1>Map类</h1>
+![屏幕截图 2024-03-26 103556](https://github.com/WarlockW/JavaSE_Daily_Learning/assets/64346345/572b776b-d478-48da-a46b-bfeb06085d67)
 
-![屏幕截图 2024-03-26 102524](https://github.com/WarlockW/JavaSE_Daily_Learning/assets/64346345/08b819cc-c2c7-4fc4-8c77-8279eb4601ab)
