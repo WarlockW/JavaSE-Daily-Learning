@@ -1,4 +1,7 @@
 <h1>集合的主要三种类型</h1>
+
+![屏幕截图 2024-03-26 140851](https://github.com/WarlockW/JavaSE_Daily_Learning/assets/64346345/95551ae4-3e15-44b4-beb3-9f34a4db9dd5)
+
 List：一种有序列表的集合，例如，按索引排列的Student的List；<br>
 Set：一种保证没有重复元素的集合，例如，所有无重复名称的Student的Set；<br>
 Map：一种通过键值（key-value）查找的映射表集合，例如，根据Student的name查找对应Student的Map。<br>
