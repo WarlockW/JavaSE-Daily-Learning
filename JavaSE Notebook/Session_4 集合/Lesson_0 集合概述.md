@@ -16,9 +16,17 @@ Map：一种通过键值（key-value）查找的映射表集合，例如，根�
 栈和队列----栈：先进后出(子弹夹,杯子)；队列：先进先出(排队,管子)<br>
 
 <h1>List类与Set类</h1>
+
 ![屏幕截图 2024-03-26 102524](https://github.com/WarlockW/JavaSE_Daily_Learning/assets/64346345/08b819cc-c2c7-4fc4-8c77-8279eb4601ab)
 
+通常使用collection接口实现List和Set功能
+对于List：<br>
+1.ArrayList（最常用）：底层数据结构是数组，查询快，增删慢，线程不安全，效率高，可以存储重复元素
+2.LinkedList 底层数据结构是链表，查询慢，增删快，线程不安全，效率高，可以存储重复元素
+3.Vector:底层数据结构是数组，查询快，增删慢，线程安全，效率低，可以存储重复元素
+
+对于Set：<br>
 
 <h1>Map类</h1>
 
-
+![屏幕截图 2024-03-26 103556](https://github.com/WarlockW/JavaSE_Daily_Learning/assets/64346345/a20ff237-b6ac-40c0-aafd-2f2ab38956c4)
