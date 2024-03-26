@@ -19,13 +19,18 @@ Map：一种通过键值（key-value）查找的映射表集合，例如，根�
 
 ![屏幕截图 2024-03-26 102524](https://github.com/WarlockW/JavaSE_Daily_Learning/assets/64346345/08b819cc-c2c7-4fc4-8c77-8279eb4601ab)
 
-通常使用collection接口实现List和Set功能
+通常使用collection接口实现List和Set功能 <br>
 对于List：<br>
-1.ArrayList（最常用）：底层数据结构是数组，查询快，增删慢，线程不安全，效率高，可以存储重复元素。<br>
-2.LinkedList 底层数据结构是链表，查询慢，增删快，线程不安全，效率高，可以存储重复元素。<br>
+1.ArrayList(最常用):底层数据结构是数组，查询快，增删慢，线程不安全，效率高，可以存储重复元素。<br>
+2.LinkedList :底层数据结构是链表，查询慢，增删快，线程不安全，效率高，可以存储重复元素。<br>
 3.Vector:底层数据结构是数组，查询快，增删慢，线程安全，效率低，可以存储重复元素。<br>
 <br>
 对于Set：<br>
+1.HashSet(最常用):底层数据结构是哈希表(是一个元素为链表的数组)<br>
+2.TreeSet:底层数据结构是红黑树(是一个自平衡的二叉树)<br>
+3.LinkedHashSet:底层数据结构由哈希表和链表组成。<br>
+
+
 
 <h1>Map类</h1>
 
