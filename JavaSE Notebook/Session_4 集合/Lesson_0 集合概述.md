@@ -1,1 +1,10 @@
-
+<h1>集合的主要三种类型</h1>
+List：一种有序列表的集合，例如，按索引排列的Student的List；<br>
+Set：一种保证没有重复元素的集合，例如，所有无重复名称的Student的Set；<br>
+Map：一种通过键值（key-value）查找的映射表集合，例如，根据Student的name查找对应Student的Map。<br>
+<br>
+如果是集合类型----<br>
+有List和Set供我们选择。List的特点是插入有序的，元素是可重复的。Set的特点是插入无序的，元素不可重复的。至于选择哪个实现类来作为我们的存储容器，我们就得看具体的应用场景。是希望可重复的就得用List，选择List下常见的子类。是希望不可重复，选择Set下常见的子类。<br>
+<br>
+如果是Key-Value型----<br>
+那我们会选择Map。如果要保持插入顺序的，我们可以选择LinkedHashMap，如果不需要则选择HashMap，如果要排序则选择TreeMap。<br>
