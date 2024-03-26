@@ -20,5 +20,5 @@ Map：一种通过键值（key-value）查找的映射表集合，例如，根�
 
 
 <h1>Map类</h1>
-![屏幕截图 2024-03-26 103556](https://github.com/WarlockW/JavaSE_Daily_Learning/assets/64346345/572b776b-d478-48da-a46b-bfeb06085d67)
+
 
